@@ -9,332 +9,38 @@
 
 /*		   		        Made by @gilbN					 */
 /* 			      https://github.com/gilbN/theme.park			 */
+/* ((http(s?)):\/\/)?(?!.*(userstyles\.org|sonarr\.tv|google\.com|reddit\.com|github\.com|google\.pt))+[-A-Za-z0-9+&@#/%?=~_|!:,.;]+(8989|sonarr)+(.*) */
 
-@import url("https://raw.githubusercontent.com/f-caetano/SonarrTheme/main/placeholders.css");
-@import url("https://raw.githubusercontent.com/f-caetano/SonarrTheme/main/transparent.css");
-@import url("https://raw.githubusercontent.com/f-caetano/SonarrTheme/main/servarr-base.css");
+@import url("https://theme-park.dev/css/base/sonarr/sonarr-base.css");
 
+/* SONARR AQUAMARINE THEME */
 :root {
-    --calendar-tv-unaired-premiere: 53 197 244;
-    --calendar-tv-downloading: 122 67 182;
-    --calendar-tv-unmonitored: 173 173 173;
-    --calendar-tv-unaired: 93 156 236;
-    --calendar-tv-missing: 240 80 80;
-    --calendar-tv-on-air: 255 165 0;
-    --calendar-tv-available: 39 194 76;
+  --main-bg-color:  radial-gradient( ellipse at center,  rgba(87,108,117,1) 0%, #253237 100.2% ) center center/cover no-repeat fixed;
+  --modal-bg-color: radial-gradient( ellipse at top,  rgba(87,108,117,1) 0%, rgba(37,50,55,1) 100.2% ) center center/cover no-repeat fixed;
+
+
+  --drop-down-menu-bg: #253237;
+
+  --button-color: #009688;
+  --button-color-hover: #12afa0;
+  --button-text: #eee;
+  --button-text-hover: #FFF;
+
+  --accent-color:  18, 175, 160;
+  --accent-color-hover: rgb(var(--accent-color),.8);
+  --link-color: #0ed2bf;
+  --link-color-hover: #36e7d6;
+  --label-text-color: #fff;
+
+  --text:#ddd;
+  --text-hover: #fff;
+  --text-muted: #8dcfc9;
+
+
+  --arr-queue-color: #009688; /* Servarr apps + Bazarr */
+  --plex-poster-unwatched: rgb(21, 213, 194);
+  --petio-spinner: invert(39%) sepia(98%) saturate(527%) hue-rotate(129deg) brightness(94%) contrast(101%); /* Made with https://codepen.io/jsm91/embed/ZEEawyZ */
+  --gitea-color-primary-dark-4: 18, 175, 160;
+  --overseerr-gradient: radial-gradient(ellipse at center, rgb(71, 145, 138, .9) 0%, rgb(11, 49, 97, .9) 100%) center center/cover no-repeat fixed;
 }
 
-[class*="EpisodeTitleLink-link-"] {
-    color: var(--link-color) !important;
-}
-
-[class*="EpisodeTitleLink-link-"]:hover {
-    color: var(--link-color-hover) !important;
-}
-
-/* NOTE calendar modal popup */
-[class*="EpisodeSummary-infoTitle-"],
-[class*="EpisodeDetailsModalContent-tab-"],
-[class*="DescriptionListItemTitle-title-"] {
-    color: var(--text-hover);
-}
-
-[class*="EpisodeDetailsModalContent-selectedTab-"] {
-    border-color: var(--accent-color-hover);
-    background: var(--transparency-dark-40);
-}
-
-[class*="SeriesSearchInput-sectionTitle-"] {
-    color: var(--text-hover);
-}
-
-[class*="SeriesSearchInput-containerOpen-"] [class*="SeriesSearchInput-seriesContainer-"] {
-    border: none !important;
-    background: var(--modal-bg-color);
-    background-repeat: repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    background-position: center center, center center;
-    background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
-    color: var(--text-hover) !important;
-    box-shadow: 0 0 10px 1px transparent !important;
-}
-
-[class*="SeriesSearchInput-highlighted-"] {
-    background: var(--transparency-dark-10);
-}
-
-/* SERIES PAGE */
-[class*="SeriesIndexPoster-controls-"] {
-    background-color: rgb(var(--accent-color)) !important;
-}
-
-/* OVERVIEW PAGE */
-[class*="SeriesIndexOverviews-container-"],
-[class*="SeriesIndexOverviews-container-"]:hover {
-    background-color: transparent !important;
-}
-
-[clas*="SeriesIndexOverview-container-"]:hover [class*="SeriesIndexOverview-content-"] {
-    background-color: transparent;
-}
-
-[class*="SeriesIndexOverview-content-"]:hover {
-    background: var(--transparency-dark-10) !important;
-}
-
-[class*="SeriesIndexOverview-link-"]:hover {
-    text-decoration: none;
-}
-
-/* SHOW PAGE */
-[class*="SeriesDetailsSeason-season-"],
-[class*="SeriesDetailsSeason-collapseButtonContainer-"] {
-    border: none !important;
-    background: var(--transparency-dark-25) !important;
-}
-
-[class*="SeriesDetailsSeason-episodes-"] {
-    border-top: 1px solid rgb(255 255 255 / 50%);
-}
-
-[class*="SeriesDetailsSeason-actionButton-"],
-[class*="SeriesDetailsSeason-collapseButtonIcon-"] {
-    color: var(--text) !important;
-}
-
-[class*="SeriesDetailsSeason-actionButton-"]:hover,
-[class*="SeriesDetailsSeason-collapseButtonIcon-"]:hover {
-    color: var(--text-hover) !important;
-}
-
-[class*="SeriesDetailsSeason-sizeOnDisk-"] {
-    color: var(--text-muted);
-}
-
-[class*="SeriesDetails-contentContainer-"] {
-    color: var(--text);
-}
-
-[class*="SeriesDetailsSeason-seasonNumber-"] {
-    color: var(--text-hover);
-}
-
-[class*="SeriesDetailsSeason-collapseButtonContainer-"] {
-    border: none !important;
-    background: var(--transparency-dark-25) !important;
-}
-
-[class*="EpisodeTitleLink-link-"]:hover {
-    color: var(--link-color-hover);
-}
-
-[class*="SeriesIndexPoster-action-"] .fa-search:hover {
-    background-color: transparent;
-    color: var(--label-text-color) !important;
-}
-
-[class*="SeriesDetailsSeason-left-"] [class*="IconButton-button-"]:hover,
-[class*="SeriesDetails-seriesNavigationButton-"]:hover,
-[class*="SeriesDetails-monitorToggleButton-"]:hover {
-    color: var(--text-hover);
-}
-
-/* POSTERS */
-[class*="SeriesIndexPoster-title-"],
-[class*="SeriesIndexPoster-nextAiring-"],
-[class*="SeriesIndexPosterInfo-info-"] {
-    background: var(--transparency-light-10);
-    color: var(--text-hover);
-}
-
-/* SEARCH BAR */
-[class*="AddNewSeries-searchIconContainer-"] {
-    border: none;
-    background: var(--transparency-light-10);
-    color: var(--text-hover);
-}
-
-[class*="SeriesSearchInput-container-"] [class*="Input-input-"] {
-    background: transparent;
-    border-bottom: solid 1px var(--text);
-}
-
-[class*="SeriesSearchInput-container-"] [class*="Input-input-"]:focus {
-    border-bottom: none;
-    background: transparent;
-}
-
-[class*="SeriesSearchResult-alternateTitle-"] {
-    color: var(--text-hover);
-    font-size: 12px;
-}
-
-/* SEARCH RESULTS */
-[class*="AddNewSeriesSearchResult-underlay-"] {
-    background-color: transparent !important;
-}
-
-[class*="AddNewSeriesSearchResult-underlay-"]:hover {
-    background: var(--transparency-dark-10) !important;
-}
-
-[class*="AddNewSeriesSearchResult-year-"] {
-    color: var(--text-hover);
-}
-
-[class*="RootFolderSelectInputSelectedValue-seriesFolder-"] {
-    color: var(--text-hover);
-}
-
-[class*="RootFolderSelectInputOption-seriesFolder-"] {
-    color: var(--text-muted);
-}
-
-/* Drop down menu/button*/
-[class*="ImportSeriesSelectSeries-button-"] {
-    border: none !important;
-    background: var(--transparency-dark-25) !important;
-}
-
-[class*="ImportSeriesSearchResult-series-"]:hover {
-    background: var(--transparency-light-10);
-}
-
-[class*="ImportSeriesSelectSeries-content-"],
-[class*="ImportSeriesSelectSeries-searchIconContainer-"] {
-    border: none;
-    background: var(--modal-bg-color);
-    background-repeat: repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    background-position: center center, center center;
-    background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
-    color: var(--text-hover);
-}
-
-[class*="ImportSeriesTitle-year-"] {
-    color: var(--text-muted);
-}
-
-/* SEASON PASS */
-
-[class*="SeasonPassSeason-season-"] {
-    border: none;
-    background: var(--transparency-dark-25) !important;
-}
-
-[class*="SeasonPassSeason-allEpisodes-"] {
-    background-color: #5cb85c;
-}
-
-/* CALENDAR */
-[class*="CircularProgressBar-circularProgressBarContainer-"] svg circle {
-    stroke: #fff;
-}
-
-[class*="CalendarEvent-downloaded-"] {
-    background: rgb(var(--calendar-tv-available) / .7) !important;
-    border-left-color: transparent !important;
-    color: #fff;
-}
-
-[class*="Calendar-calendar-"] [class*="CalendarEvent-downloaded-"]:hover {
-    background: rgb(var(--calendar-tv-available) / .5) !important;
-    border-left-color: transparent !important;
-}
-
-[class*="CalendarEvent-missing-"] {
-    background: rgb(var(--calendar-tv-missing) / .7) !important;
-    border-left-color: transparent !important;
-    color: #fff;
-}
-
-[class*="Calendar-calendar-"] [class*="CalendarEvent-missing-"]:hover {
-    background: rgb(var(--calendar-tv-missing) / .5) !important;
-    border-left-color: transparent !important;
-}
-
-[class*="CalendarEvent-unaired-"] {
-    background: rgb(var(--calendar-tv-unaired) / .7) !important;
-    border-left-color: transparent !important;
-    color: #fff;
-}
-
-[class*="Calendar-calendar-"] [class*="CalendarEvent-unaired-"]:hover {
-    background: rgb(var(--calendar-tv-unaired) / .5) !important;
-    border-left-color: transparent !important;
-}
-
-[class*="CalendarEvent-unmonitored-"] {
-    background: rgb(var(--calendar-tv-unmonitored) / .7) !important;
-    border-left-color: transparent !important;
-    color: #fff;
-}
-
-[class*="Calendar-calendar-"] [class*="CalendarEvent-unmonitored-"]:hover {
-    background: rgb(var(--calendar-tv-unmonitored) / .5) !important;
-    border-left-color: transparent !important;
-}
-
-[class*="CalendarEvent-onAir-"] {
-    background: rgb(var(--calendar-tv-on-air) / .7) !important;
-    border-left-color: transparent !important;
-    color: #fff;
-}
-
-[class*="Calendar-calendar-"] [class*="CalendarEvent-onAir-"]:hover {
-    background: rgb(var(--calendar-tv-on-air) / .5) !important;
-    border-left-color: transparent !important;
-}
-
-[class*="CalendarEvent-downloading-"] {
-    background: rgb(var(--calendar-tv-downloading) / .7) !important;
-    border-left-color: transparent !important;
-    color: #fff;
-}
-
-[class*="Calendar-calendar-"] [class*="CalendarEvent-downloading-"]:hover {
-    background: rgb(var(--calendar-tv-downloading) / .5) !important;
-    border-left-color: transparent !important;
-}
-
-[class*="CalendarEvent-seriesTitle-"],
-[class*="CalendarEvent-episodeInfo-"],
-[class*="CalendarEvent-airTime-"] {
-    color: #fff !important;
-}
-
-[class*="CalendarEventGroup-seriesTitle-"] {
-    color: #fff !important;
-}
-
-[class*="CalendarEventGroup-airTime-"] {
-    color: #eee;
-}
-
-[class*="CalendarEventGroup-episodeInfo-"] {
-    color: #eee;
-}
-
-/*QUEUE PAGE */
-/* Manual Import*/
-[class*="SelectEpisodeModalContent-path-"] {
-    color: var(--text);
-}
-
-/* Scene information */
-[class*="ReleaseSceneIndicator-levelNone-"] {
-    border-color: var(--text);
-    color: var(--text);
-    opacity: 1;
-}
-
-[class*="ReleaseSceneIndicator-levelMapped-"] {
-    border-color: var(--text);
-    color: var(--text);
-}
