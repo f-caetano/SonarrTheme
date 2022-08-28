@@ -10,9 +10,9 @@
 /*		   		        Made by @gilbN					 */
 /* 			      https://github.com/gilbN/theme.park			 */
 
-@import url("/css/defaults/placeholders.css");
-@import url("/css/defaults/transparent.css");
-@import url("/css/defaults/servarr-base.css");
+@import url("https://raw.githubusercontent.com/f-caetano/SonarrTheme/main/placeholders");
+@import url("https://raw.githubusercontent.com/f-caetano/SonarrTheme/main/transparent");
+@import url("https://raw.githubusercontent.com/f-caetano/SonarrTheme/main/servarr-base");
 
 :root {
     --calendar-tv-unaired-premiere: 53 197 244;
